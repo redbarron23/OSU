@@ -1,0 +1,16 @@
+6. Remember to discuss the report sections on the discussion boards, these skills will be very important later on!
+(50 points) Project Component (design only):
+You need to be able to spend some time designing projects before you start programming for them, so this assignment's project will be a design for a word guessing game.
+1. (10) Start a design based on what we know about user input, variables, if statements, and loops for a word guessing game. What would your word guessing game behave like? You can think of this like a hangman game, a Wheel of Fortune game, or other similar word guessing game.
+Your response to this should contain some sort of explanation or drawing for what you would create for a word guessing game if it were completely up to you.
+(Note: if you have not learned anything about strings yet, then you can simply write directions such as “get word as input”, “check that word is valid”, “get other user's letter guess as input”, “check if letter is in word”, ...)
+2. (40) You will receive more specific requirements later, this design is based on your own ideas to start with, so if these following requirements were imposed upon your program and design, then how might you do each of
+the following:
+a. (05) it needs to store player 1's “secret word”,
+b. (05) the “secret word” will only be allowed to contain letters (at least for now),
+c. (05) the program will repeatedly ask for single letters from player 2,
+d. (10) the program will need to show correct letter guesses and the word so far based on those correct guesses,
+e. (05) player two will only get so many guesses (how will you decide this?),
+f. (10) when done, the program will need to show the secret word, list which letters were missing still, and ask if the players want to play again.
+Discussion ideas: what design considerations you think you need to make for each of the above requirements. Are there more major requirements? What are the minor considerations for each of the major considerations?
+Remember to submit your report (in PDF) and source files (in .cpp) to TEACH before the end of Sunday.
