@@ -12,3 +12,35 @@
  *
  *
  */
+
+/* My Feedback:
+ * why it might be a good idea or bad idea to have this  as a few separate lines instead of as a one line expression in our code?
+ * Answer:
+ 
+ * What ways did you think of that user input could be incorrect for this problem?
+ * Answer:
+ 
+ * how might you be able to detect and possibly correct those errors, and were you able to implement it?
+ * Answer:
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+int value1, value2;
+int main() {
+    //a. it should ask for two int values (one for the minimum value for some random number in a range and one for the maximum number in the range),
+    cout << "Please enter two values one for min and the other for max\n";
+    cout << "Enter first value for minimum:\n";
+    //check that the values entered were int values,
+    cin >> value1;
+    cout << "Enter second value for maximum:\n";
+    //check that the values entered were int values,
+    cin >> value2;
+    
+  // c. generate a number within that range,
+  // d. assign that value to some variable,
+  // e. and print out the value along with some indicator so the user knows what the value is for 
+  // (you will not always want to print values out, but in this case we want to see that our code is working)
+
+
+}
