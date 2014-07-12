@@ -8,21 +8,27 @@ int main() {
     string lastName;
     string middleName;
     string fullName;
+    string dot =("."); //nount
 
-    cout << "Enter First Name:" << endl;
+    cout << "Enter First Name:\n";
     getline(cin, firstName);
 
     cout << "Enter Middle Name or Initial:\n";
     getline(cin, middle);
-    middleName = middle;
+
+    if (middle.length() == 1) {
+        //middleName = str1 += str2;
+        middleName = middle += dot;
+    }
+    else {
+        middleName = middle;
+    } 
 
     cout << "Enter Last Name or Initial:\n";
     getline(cin, lastName);
 
-    //fullName = lastName + " " + middleName + " " + firstName;
-    //cout << lastName +  middleName + firstName;
-   fullName=lastName + " " +  middleName + " " + firstName;
-   cout << fullName << endl;
+    fullName=lastName + " " +  middleName + " " + firstName;
+    cout << fullName << endl;
 
     return 0;
 }
