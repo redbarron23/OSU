@@ -17,3 +17,32 @@
 * Discuss: what happens if you extract from cin and use getline in the same code repeatedly? How can you fix this?
 
 */
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+int main() {
+    cout << "Enter a string to print one char at a time" << endl;
+    string my_str;
+    cin >> my_str;
+    
+    // forward
+    for (int i=0; i< my_str.length(); i++) {
+        cout << my_str.at(i) << endl;
+    }
+
+    cout << "Enter a string to reverse" << endl;
+    string reverse_my_str;
+    cin >> reverse_my_str;
+
+    // reverse
+    for(int i= int(reverse_my_str.length()-1); i >= 0; i--) {
+        cout << reverse_my_str.at(i) << endl;
+    }
+
+    return 0;
+
+}

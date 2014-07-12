@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
+/*
+ *  should also produce the output User, Mary A.
+*/
 
 int main() {
     string firstName;
@@ -27,7 +30,7 @@ int main() {
     cout << "Enter Last Name or Initial:\n";
     getline(cin, lastName);
 
-    fullName=lastName + " " +  middleName + " " + firstName;
+    fullName=lastName + ", " +  middleName + " " + firstName;
     cout << fullName << endl;
 
     return 0;
