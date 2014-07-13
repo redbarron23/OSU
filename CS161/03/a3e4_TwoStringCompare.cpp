@@ -4,8 +4,9 @@
 
 * Discussion idea: 
 * is there an easier way to check for equality of two strings? 
+* Answer: Yes string1 == string2
 * Why might I require you to “do it the hard way”?
-
+* Answer:  if the array has a null char at the end?
 */
 
 #include <iostream>

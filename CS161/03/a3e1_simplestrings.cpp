@@ -21,8 +21,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
-
+char c;
 
 int main() {
     cout << "Enter a string to print one char at a time" << endl;
@@ -42,6 +41,20 @@ int main() {
     for(int i= int(reverse_my_str.length()-1); i >= 0; i--) {
         cout << reverse_my_str.at(i) << endl;
     }
+
+    //  count the number of letters in the word rather than the number of characters
+    for (int i=0; i< my_str.length(); i++) {
+       my_str[i]
+       c = line.at(i);         // Get a char from string
+
+        // if it's NOT within these bounds, then it's not a character
+        if (! ( ( c >= 'a' && c <= 'z' ) || ( c >= 'A' && c <= 'Z' ) ) ) {
+
+             std::cout << "Error!" << std::endl;
+
+    }
+
+    // multiple words in a line
 
     return 0;
 
