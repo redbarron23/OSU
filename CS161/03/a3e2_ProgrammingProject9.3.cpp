@@ -48,6 +48,9 @@ int main() {
         //middleName = str1 += str2;
         middleName = middle += dot;
     }
+    else if (middle.length() == 0) {
+        middleName =  "";
+    }
     else {
         middleName = middle;
     }
