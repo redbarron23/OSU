@@ -25,22 +25,22 @@
  */
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
+#include <ctime>
 using namespace std;
-int value1, value2;
-int main() {
-    //a. it should ask for two int values (one for the minimum value for some random number in a range and one for the maximum number in the range),
-    cout << "Please enter two values one for min and the other for max\n";
-    cout << "Enter first value for minimum:\n";
-    //check that the values entered were int values,
-    cin >> value1;
-    cout << "Enter second value for maximum:\n";
-    //check that the values entered were int values,
-    cin >> value2;
-    
-  // c. generate a number within that range,
-  // d. assign that value to some variable,
-  // e. and print out the value along with some indicator so the user knows what the value is for 
-  // (you will not always want to print values out, but in this case we want to see that our code is working)
 
+int main() {
+    int min, max;
+    srand(time(0));
+    cout << "Please enter a min number: " << endl;
+    cin >> min;
+    cout << "Please enter a max number: " << endl;
+    cin >> max;
+
+
+    for(int x = min; x<max; x++) {
+        cout << min+(rand()%max) << endl;
+    }
 
 }
