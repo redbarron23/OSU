@@ -13,8 +13,9 @@
 using namespace std;
 string String1, String2;
 int i;
-str1Length = String1.length();
-str2Length = String2.length();
+int str1Length = String1.length();
+int str2Length = String2.length();
+int theSameLengthOrNot;
 
 int main() {
 
@@ -33,15 +34,24 @@ int main() {
         cout << String2[i] << endl;
     }
 
-    if(str1Length < str2Length){
-        theSameLengthOrNot = false;
-    } else 
-
-    if(str1Length > str2Length){
-        theSameLengthOrNot = false;
+    if (str1Length < str2Length) {
+            theSameLengthOrNot = false;
+    } else if(str1Length > str2Length) {
+            theSameLengthOrNot = false;
     } else if(str1Length == str2Length) {
-        theSameLengthOrNot = true;
+            theSameLengthOrNot = true;
     }
 
+    if (theSameLengthOrNot = true) {
+        //cout << "Strings are equal" << endl; 
+        for (i = 0; i < String1.length(); i++) {
+            // compare String1[i] to String2[i] 
+            if ( String1[i] == String2[i] ) {
+                cout << String1[i] << " and " << String2[i] << " are equal " << endl;
+            } else
+                cout << String1[i] << " and " << String2[i] << " are not equal " << endl;
+        }
+        
+    }
 
 }
