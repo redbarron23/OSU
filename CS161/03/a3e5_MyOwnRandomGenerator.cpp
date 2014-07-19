@@ -35,8 +35,10 @@ int main() {
     srand(time(0));
     cout << "Please enter a min number: " << endl;
     cin >> min;
+    //* b. check that the values entered were int values,
     cout << "Please enter a max number: " << endl;
     cin >> max;
+    //* b. check that the values entered were int values,
 
 
     for(int x = min; x<max; x++) {
