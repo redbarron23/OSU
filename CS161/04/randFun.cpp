@@ -18,18 +18,25 @@ Discussion idea: I am guessing that some of you may have found ways to generate 
 using namespace std;
 
 // prototype
-int rand_int(int min, int max);
+void rand_int(int, int);
 
 int main() {
-    int myrand_int = rand_int(1, 10);
-    cout << myrand_int;
+    int min, max;
+    cout << "Please enter a minimum number: " << endl;
+    cin >> min;
+    cout << "Please enter a maximum number: " << endl;
+    cin >> max;
+
+    rand_int(min, max);
     return 0;
 }
 
-int rand_int(int min, int max)
+void rand_int(int min, int max)
 {
      srand(time(0));
-     int min, max;
-     int myrand = min+(rand()%max) << endl;
-     return myrand;
+     //int min, max;
+     int myrand;
+     myrand = rand() % ((max-min) + min);
+    // return myrand;
+     cout << myrand;
 }
