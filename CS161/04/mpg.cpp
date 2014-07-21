@@ -10,23 +10,22 @@ Discussion idea: Why in the world would I ask you to do such a simple calculatio
 #include <string>
 using namespace std;
 const float gallons_per_litre = 0.264179;
-void convertLitresGallons(int nliters);
+void convertLitresGallons(float nliters);
 
-int nlitres;
+float nlitres;
 int main() {
 
-    int nliters;
     cout << "Enter the number of litres: " << endl;
-    cin >> nliters;
+    cin >> nlitres;
 
     convertLitresGallons(nlitres);
     return 0;
 }
 
-void convertLitresGallons(int nlitres)
+void convertLitresGallons(float nlitres)
 {
     float total;
     total = nlitres * gallons_per_litre;
-    cout << total;
+    cout << total << endl;
     
 }
