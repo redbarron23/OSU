@@ -1,0 +1,21 @@
+* Remember to keep discussion going!
+
+Submission Checklist:
+Exercises (20 pts): 
+=====================
+1. randFun.cpp
+2. refFun.cpp 
+3. sort.cpp 
+4. recFun.cpp 
+5. recFun2.cpp 
+6. savings.cpp
+
+
+Project (50 pts): secWordFun.cpp
+=====================
+7. secWordFun.cpp
+8. pdf Section:
+Report, in PDF format, must address these four sections (30 pts):
+Understanding Design Testing Reflection
+The implementation part of the assignment is the .cpp file you submit.
+

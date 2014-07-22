@@ -1,0 +1,83 @@
+Last updated 17 July, 2014 Assignment 5 (100 points):
+Please see Submission Checklist (below) for submission requirements.
+It is time to bring together some concepts we have been learning! Remember that you can reuse code to solve these problems!
+Remember that there are recursive and non-recursive solutions to most of the things we will do, but that some problems will be easier to solve with recursion while some will be easier to solve with non-recursive repetition (such as loops).
+
+(30) Remember to submit your report! (20) Exercise components:
+Discuss: why might I ask you to solve so many of these problems more than once?
+1. (3) Write a simple function that acts like a random number generator with the following behavior:
+File must be called: randFun.cpp
+a. its definition looks like the following: void rand_int(const int &min, const int &max, int &val),
+b. it accepts references to two int values and a reference to a third value (one for the bottom of the random range, one for the top of the random range, and one to store the final value), generates a number within that range, and then sets the value of the third number to that generated value,
+Discuss:
+i. Why might I use const in the signature of the function?
+ii. Why might I want to do this with references to values instead of copies of values?
+iii. Can I return two values from a function? Is there a way to alter multiple values passed into a function
+call?
+
+2. (3) Write a simple function that accepts two references to string and returns whether they have the same contents with the use of a loop to check each character individually.
+File must be called: refFun.cpp
+
+3. (3) Programming Project 4.17 from Absolute C++ (p183 in the 5e book),
+File must be called: sortFun.cpp
+“Write a function named sort that takes three integer parameters by reference. The function should rearrange the parameter values so that the first parameter gets set to the smallest value, the second parameter gets set to the second smallest value, and the third parameter gets set to the largest value. For example, given the variable assignmentsa = 30; b = 10; c = 20;then the function call sort(a,b,c)should result in a =10, b =20, and c =30. Note that the array construct covered in Chapter 5 will give you a way to solve this problem for an arbitrary number of items instead of only for three items”
+
+4. (3) Programming Project 13.1 from Absolute C++ (p607 in the 5e book),
+File must be called: recFun.cpp
+“Write a recursive function definition for a function that has one parameter n of typeintand that returns the nth Fibonacci number. The Fibonacci numbers are F0 is 1, F1 is 1, F2 is 2, F3 is 3, F4 is 5, and in general
+￼Fi+2 =Fi +Fi+1 fori=0,1,2,...”
+Discuss: later elements rely on earlier elements, so how many elements do we need to have provided to start this recursive process?
+
+5. (4) Programming Project 13.10 from Absolute C++ (p610 in the 5e book),
+File must be called: recFun2.cpp
+“Consider a frame of bowling pins, where each * represents a pin: *
+** ***
+**** *****
+There are five rows and a total of fifteen pins. If we had only the top four rows, there would be a total of ten pins. If we had only the top three rows, there would be a total of six pins. If we had only the top two rows, there would be a total of three pins. If we had only the top row, there would be a total of one pin.
+Write a recursive function that takes as input the number of rows, n, and outputs the total number of pins that would exist in a pyramid with n rows. Your program should allow for values of n that are larger than 5.”
+Discuss: There is a nice looking sigma-notation expression (a sum) that describes the total number of pins given n rows, can you find or create that expression?
+
+6. (4) Programming Project 13.8 from Absolute C++ (p609 in the 5e book),
+File must be called: savings.cpp
+“A savings account typically accrues savings using compound interest. If you deposit $1000 with a 10% interest rate per year, after one year you will have $1100. If you leave this money in the account for another year at 10% interest, you will have $1210. After three years you will have $1331, and so on.
+Write a program that inputs the initial amount, an interest rate per year, and the number of years the money will accrue compound interest. Write a recursive function that calculates the amount of money that will be in the savings account using the input information.
+To verify your function, the amount should be equal to P(1+i)n, where P is the amount initially saved, i is the interest rate per year, and n is the number of years.”
+
+7. Be sure to test that each of your sections of code work correctly in a variety of cases.
+After you think your code is good, trade it with another person and try to break their code (share with the other person what you find works well and what does not).
+(50) Project components (design and implementation):
+1. Remember before you begin coding to draw or write out what this program will do. Also, remember to think of what tests you could use as you design and code up your solution.
+(Note: you may be able to jump in and program a solution to this program with a bit of time, but you need to pay attention to how you decide what techniques you are using, why you are using them, and whether there are any other options available to you)
+Discuss: what do your designs looked like, how did you go from design to program, what did you do to make sure your program was working correctly (consider letting someone else test your program to see if they can break it).
+File must be called: secWordFun.cpp
+Write a 2 player word guess program that does the following:
+a. (05) Asks one user to enter in the secret word to be guessed (you can decide on length limits if you want),
+b. (05) Accepts and stores that word into a variable,
+c. (10) Uses a function to decide if the word is a valid word (no special characters, spaces, or numbers
+should be allowed),
+d. (15) Uses a loop to repeatedly do the following (you choose how many guesses allowed, perhaps related to word length):
+i. Show the user what (if any) of the word has been correctly guessed so far,
+(Note: perhaps using underscores or hyphens to denote letters not yet guessed)
+ii. Asks the other user to guess a letter in the secret word,
+(Note: you might consider listing the valid letters to help the user choose) (Note: tell the user how many guesses they have left)
+iii. Checks if the guess is a valid letter (best to use a function to keep the code in smaller sections)
+iv. Tells the user whether the letter is in the word (and if it was in it multiple times),
+(Note: likely using an if statement and loop here somewhere...)
+v. Changes the list of possible letters to reflect the user's newest guess,
+(Note: this can be tricky, but remember that you can usually use multiple variables to track multiple aspects of related information!)
+e. (10) Tells the second user whether they got the secret word or ran out of guesses,
+i. if the second user ran out of guesses, then the program tells them:
+1. what the secret word was,
+2. what letters were missing from their guesses,
+f. (05) Lets the users to play again (without terminating and restarting the program or calling the main function...),
+(Note: you might consider making a function that executes all these steps and a loop that calls this function as necessary)
+(Note: you should not ever need to call the main function yourself) Remember to submit your report and source files to TEACH before the end of Sunday.
+Remember to keep discussion going!
+Submission Checklist:
+Exercises (20 pts): randFun.cpp
+refFun.cpp sort.cpp recFun.cpp recFun2.cpp savings.cpp
+Project (50 pts): secWordFun.cpp
+Report, in PDF format, must address these four sections (30 pts):
+Understanding Design Testing Reflection
+The implementation part of the assignment is the .cpp file you submit.
+
