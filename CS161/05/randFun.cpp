@@ -41,10 +41,14 @@ int main()
 
 void getNumbers(int& min, int& max)
 {
+    srand(time(NULL));
     cout << "Please enter a min number: " << endl;
     cin >> min;
     cout << "Please enter a max number: " << endl;
     cin >> max;
+    int val;
+    val = rand() % max + min;
+    cout << val << endl;
 }
 
 void rand_int(const int& min, const int& max, int& val)
