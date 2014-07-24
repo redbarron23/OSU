@@ -11,7 +11,7 @@ void rand_int(const int& min, const int& max, int& val);
 int main()
 {
     int minNum=1;
-    int maxNum=10;
+    int maxNum=100;
     int generatedNum;
     rand_int(minNum, maxNum, generatedNum);
     cout << "The random number generated between [" << minNum << " and " << maxNum << "] is " << generatedNum << endl;
@@ -23,5 +23,4 @@ void rand_int(const int& min, const int& max, int& val)
 {
     srand(time(NULL));
     val = rand() % max + min;
-    cout << val;
 }
