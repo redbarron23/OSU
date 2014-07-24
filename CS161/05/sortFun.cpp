@@ -5,12 +5,14 @@
  
 3. (3) Programming Project 4.17 from Absolute C++ (p183 in the 5e book),
 File must be called: sortFun.cpp
-“Write a function named sort that takes three integer parameters by reference. The function should rearrange the parameter values so that the first parameter gets set to the smallest value, the second parameter gets set to the second smallest value, and the third parameter gets set to the largest value. For example, given the variable assignments a = 30; b = 10; c = 20;then the function call sort(a,b,c)should result in a =10, b =20, and c =30. Note that the array construct covered in Chapter 5 will give you a way to solve this problem for an arbitrary number of items instead of only for three items”
+“Write a function named sort that takes three integer parameters by reference. The function should rearrange the parameter values so that the first parameter gets set to the smallest value, the second parameter gets set to the second smallest value, and the third parameter gets set to the largest value. For example, given the variable assignments a = 30; b = 10; c = 20; then the function call sort(a,b,c)should result in a =10, b =20, and c =30. Note that the array construct covered in Chapter 5 will give you a way to solve this problem for an arbitrary number of items instead of only for three items”
 */
 
 #include <iostream>
 using namespace std;
+
 int sort(int& p1, int& p2, int& p3);
+
 int main()
 {
      int a= 30; b = 10; c = 20
@@ -18,6 +20,7 @@ int main()
      return 0;
 }
 
+//swapping numbers with a 'temp' value in the textbook, page 150, very helpful in figuring out how
 int sort(int& p1, int& p2, intp& p3)
 {
 

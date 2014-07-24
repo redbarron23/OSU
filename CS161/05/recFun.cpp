@@ -17,7 +17,7 @@ int fibo(const int& n);
 
 int main()
 {
-    int firstNum = 9;
+    int firstNum = 11;
     //fibo(first);
     cout << fibo(firstNum);
     return 0;
