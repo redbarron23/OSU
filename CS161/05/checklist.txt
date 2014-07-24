@@ -3,8 +3,8 @@
 Submission Checklist:
 Exercises (20 pts): 
 =====================
-1. randFun.cpp
-2. refFun.cpp 
+1. randFun.cpp -  completed
+2. refFun.cpp  - 
 3. sort.cpp 
 4. recFun.cpp 
 5. recFun2.cpp 

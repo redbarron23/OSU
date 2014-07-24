@@ -18,7 +18,7 @@ using namespace std;
 //randFunc(void) //prototype
 
 int main() {
-
+    string randFunc;
     cout << randFunc;
 }
 
@@ -26,8 +26,8 @@ void randFunc() {
     int myRandomNum;
     srand (time(NULL));
 
-    for (int i=0; i< 11; i++) {
-        myRandomNum = rand() % 10 + 1;
+    for (int i=0; i< 25; i++) {
+        myRandomNum = rand() % 25 + 1;
         cout << myRandomNum << endl;
     }
 }

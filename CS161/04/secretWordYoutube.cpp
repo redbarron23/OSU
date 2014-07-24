@@ -16,11 +16,19 @@ int playGame(string word)
             char response;
             cin >> response;
 
+            bool goodGuess = false;
             for (int i=0; i < word.length(); i++)
             {
                 if (response == word[i])
                     display[i] = word[i];
             }
+
+            if (!goodGuess)
+            {
+                misses++;
+                cout << response << " is not in the word
+            }
+
         }
     }
 

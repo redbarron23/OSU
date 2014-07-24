@@ -9,10 +9,27 @@ File must be called: refFun.cpp
 
 
 #include <iostream>
+#include <string>
 using namespace std;
+
+void compareString(string& s1, string& s2);
 
 int main()
 {
+    string string1="foo";
+    string string2="foo";
+    compareString(string1, string2);
+    return 0;
+}
 
+void compareString(string& s1, string& s2)
+{
+    for (int i = 0; i < s1.length(); i++) {
+            // compare s1[i] to s2[i]
+            if ( s1[i] == s2[i] ) {
+                cout << s1[i] << " and " << s2[i] << " are equal " << endl;
+            } else
+                cout << s1[i] << " and " << s2[i] << " are not equal " << endl;
+        }
 
 }

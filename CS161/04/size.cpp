@@ -11,28 +11,44 @@ Use functions for each calculation. Your program should allow the user to repeat
 #include <iostream>
 #include <string>
 using namespace std;
+float weight;
+float height;
+int age;
+float jacketSize;
+float hatSize;
+float waistInches;
 
+void userInput(float, float, int); 
 int main() {
+    userInput():
+
+    return 0;
 
 }
 
-userInput {
-    cout << "Please enter your height, weight, and age" << endl;
+void userInput 
+{
+    cout << "Please enter your Height" << endl;
     cin >> height;
+    cout << "Please enter your Weight" << endl;
     cin >> weight;
+    cout << "Please enter your Age" << endl;
     cin >> age;
+    cout << "Your Height is: << "height "Your Weight is:" << weight  << "And your Age is: " << age << endl;
 }
 
-userOutput {
-    cout << "Your  hatsize, jacketsize" << endl;
-}
+//userOutput// 
+//{
+//    cout << "Your  hatsize, jacketsize" << endl;
+//}
 
 
-void clothingSize {
-    float height, 
-    int weight, 
-    int age; 
-    int hatSize = ((weight / height) * 2.9);
-    int jacketSize;
-    int waist = weight / 5.7;
-}
+//void clothingSize 
+//{
+//    float height, 
+//    int weight, 
+//    int age; 
+//    int hatSize = ((weight / height) * 2.9);
+//    int jacketSize;
+//    int waist = weight / 5.7;
+//}

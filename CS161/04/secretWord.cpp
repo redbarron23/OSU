@@ -17,7 +17,7 @@ string playerOneSecretWord;
 void requestOneLetterfromPlayer2() //prototype
 
 int main() {
-
+   playGame("Programming");
 
    return 0;
 }
@@ -45,6 +45,10 @@ void checkplayerOneSecretWord()
              cout << "not a character\n";
              break;  //hmm is it posible to break out of function and go back to main?
          }
+     }
+
+         }
+     }
      }
 }
 

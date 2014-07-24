@@ -15,10 +15,6 @@ File must be called: retFun.cpp
 My suggestion is to take out srtingB at this time and work on just getting one input from the user, returning it from the function, and then passing that variable to the       output function
 
 Also, you are not returning anything from your output function so it should be void not string.
-
-*/
-
-/*
 */
 
 #include <iostream>
@@ -28,19 +24,11 @@ using namespace std;
 //getString(string); // Prototype
 
 int main() {
-    //string getString;
-    string getString;
     cout << "We are comparing Strings\n";
 
-    cout << "Please enter a String\n";
-    string string1;
-    cin  >> string1;
-    cout << getString(string1);
-
-    cout "Please enter another String\n";
-    string string2;
-    cin  >> string2;
-    cout << getString(string2);
+    //string returnValue;
+    returnValue = getString();
+    cout << returnValue;
 
     return 0;
 }
@@ -48,6 +36,16 @@ int main() {
 void getString(string s)
 {
     string s;
-    cout << "Here is your String: " << s;
-    return s;
+    cout << "Please enter a String\n";
+    string string1;
+    cin  >> string1;
+
+    //cout << "Please enter another String\n";
+    //string string2;
+    //cin  >> string2;
+
+    //if(string1 == string2) {
+    //   cout << string1 << " and " << string2 << " are equal" << endl; 
+   // }
 }
+*/
