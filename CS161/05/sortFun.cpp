@@ -15,13 +15,45 @@ int sort(int& p1, int& p2, int& p3);
 
 int main()
 {
-     int a= 30; b = 10; c = 20
+     //int a=30, b=10, c=20;
+     int a=30;
+     int b=10;
+     int c=20;
      sort(a, b, c);
      return 0;
 }
 
 //swapping numbers with a 'temp' value in the textbook, page 150, very helpful in figuring out how
-int sort(int& p1, int& p2, intp& p3)
+int sort(int& p1, int& p2, int& p3)
 {
+   
+   //int temp = p1;
+   //p1 = p2;
+   //p2 = p3;
+   //p3 = temp; 
+  
+   if (p1 < p2)
+   {
+       cout << p1 << " is smaller than: " << p2 << endl; 
+   }
 
+   if (p2 < p1)
+   {
+       cout << p2 << " is smaller than: " << p1 << endl; 
+   }
+
+   if (p2 < p3)
+   {
+       cout << p2 << " is smaller than: " << p3 << endl; 
+   }
+
+   if (p1 < p3)
+   {
+       cout << p1 << " is smaller than: " << p3 << endl; 
+   }
+
+   if (p3 < p1)
+   {
+       cout << p3 << " is smaller than: " << p1 << endl; 
+   }
 }
