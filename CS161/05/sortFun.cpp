@@ -16,26 +16,16 @@ int sort(int& p1, int& p2, int& p3);
 int main()
 {
      int a=30, b=10, c=20;
-     cout << "original: " << " a is: " << a << " b is: " << b << " c is: " << c << endl;
+     //int a=30, b=100, c=20;
+     //int a=10, b=1, c=2;
+     cout << "original:" << endl;
+     cout << "a is: " << a << " b is: " << b << " c is: " << c << endl << endl;
      sort(a, b, c);
      return 0;
 }
 
-//swapping numbers with a 'temp' value in the textbook, page 150, very helpful in figuring out how
-//compare a and c > swap if necessary
-// compare b and a > swap if necessary
-//  compare b and c < swap if necessary
-//   this problem definitely lends itself to the use of two nested functions; one for sort and one for swap
-//
-//    
 int sort(int& p1, int& p2, int& p3)
 {
-   
-   //int temp = p1;
-   //p1 = p2;
-   //p2 = p3;
-   //p3 = temp; 
-   //cout << p1 << " " << p2 << " " << p3;
 
    if (p1 > p2)
    {
@@ -58,45 +48,6 @@ int sort(int& p1, int& p2, int& p3)
        p3 = temp;
    }
 
-   /*
-    *
-    * if (a > b)
-    * swap a and b
-    *
-    * if (a > c)
-    * swap a and c
-    *
-    * if (b > c)
-    * swap b and c
-   */
-  
-   /*
-   if (p1 < p2)
-   {
-       cout << p1 << " is smaller than: " << p2 << endl; 
-   }
-
-   if (p2 < p1)
-   {
-       cout << p2 << " is smaller than: " << p1 << endl; 
-       sort(int& p1, int& p2, int& p3);
-   }
-
-   if (p2 < p3)
-   {
-       cout << p2 << " is smaller than: " << p3 << endl; 
-   }
-
-   if (p1 < p3)
-   {
-       cout << p1 << " is smaller than: " << p3 << endl; 
-   }
-
-   if (p3 < p1)
-   {
-       cout << p3 << " is smaller than: " << p1 << endl; 
-   }
-   */
-   
-   cout << " p1 is: " << p1 << " p2 is: " << p2 << " p3 is: " << p3 << endl;
+   cout << "after swap:" << endl;
+   cout << "a is: " << p1 << " b is: " << p2 << " c is: " << p3 << endl;
 }
