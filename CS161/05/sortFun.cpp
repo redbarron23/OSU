@@ -15,10 +15,7 @@ int sort(int& p1, int& p2, int& p3);
 
 int main()
 {
-     //int a=30, b=10, c=20;
-     int a=30;
-     int b=10;
-     int c=20;
+     int a=30, b=10, c=20;
      sort(a, b, c);
      return 0;
 }
@@ -27,11 +24,13 @@ int main()
 int sort(int& p1, int& p2, int& p3)
 {
    
-   //int temp = p1;
-   //p1 = p2;
-   //p2 = p3;
-   //p3 = temp; 
+   int temp = p1;
+   p1 = p2;
+   p2 = p3;
+   p3 = temp; 
+   cout << p1 << " " << p2 << " " << p3;
   
+   /*
    if (p1 < p2)
    {
        cout << p1 << " is smaller than: " << p2 << endl; 
@@ -40,6 +39,7 @@ int sort(int& p1, int& p2, int& p3)
    if (p2 < p1)
    {
        cout << p2 << " is smaller than: " << p1 << endl; 
+       sort(int& p1, int& p2, int& p3);
    }
 
    if (p2 < p3)
@@ -56,4 +56,5 @@ int sort(int& p1, int& p2, int& p3)
    {
        cout << p3 << " is smaller than: " << p1 << endl; 
    }
+   */
 }
