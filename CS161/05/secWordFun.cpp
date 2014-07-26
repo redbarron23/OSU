@@ -42,15 +42,35 @@ The implementation part of the assignment is the .cpp file you submit.
 #include <string>
 using namespace std;
 
+//a function to decide if the word is a valid word 
+//(no special characters, spaces, or numbers should be allowed),
+string validWord(string& guess1); 
 int main()
 {
-    //a. (05) Asks one user to enter in the secret word to be guessed (you can decide on length limits if you want),
-    //b. (05) Accepts and stores that word into a variable,
-    //c. (10) Uses a function to decide if the word is a valid word (no special characters, spaces, or numbers
-    //        should be allowed),
-    string guess1;  
     cout << "Player1 please enter a string for secret word" << endl;
     cin >> guess1;
+}
 
+string validWord(string& guess1)
+{
+    // split validWord
+    for (int i = 0; i < guess1.length(); i++) {
+        if (isdigit(guess1[0]))
+        {
+            cout << "word must be a-z or A-Z";
+        }
+        else if (ispunct(guess1[0]))
+        {
+            cout << "word must be a-z or A-Z";
+        }
+        else if (isspace(guess1[0]))
+        {
+            cout << "word must be a-z or A-Z";
+        }
+
+    }
+    // check for numbers and punct.
+    // http://www.cplusplus.com/reference/cctype/ispunct/
+    // http://www.cplusplus.com/reference/cctype/isdigit/
 
 }
