@@ -39,10 +39,18 @@ The implementation part of the assignment is the .cpp file you submit.
 */
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
+    //a. (05) Asks one user to enter in the secret word to be guessed (you can decide on length limits if you want),
+    //b. (05) Accepts and stores that word into a variable,
+    //c. (10) Uses a function to decide if the word is a valid word (no special characters, spaces, or numbers
+    //        should be allowed),
+    string guess1;  
+    cout << "Player1 please enter a string for secret word" << endl;
+    cin >> guess1;
 
 
 }
