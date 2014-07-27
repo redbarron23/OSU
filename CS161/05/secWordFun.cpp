@@ -1,11 +1,4 @@
 /*
-7. Be sure to test that each of your sections of code work correctly in a variety of cases.
-After you think your code is good, trade it with another person and try to break their code (share with the other person what you find works well and what does not).
-(50) Project components (design and implementation):
-1. Remember before you begin coding to draw or write out what this program will do. Also, remember to think of what tests you could use as you design and code up your solution.
-(Note: you may be able to jump in and program a solution to this program with a bit of time, but you need to pay attention to how you decide what techniques you are using, why you are using them, and whether there are any other options available to you)
-Discuss: what do your designs looked like, how did you go from design to program, what did you do to make sure your program was working correctly (consider letting someone else test your program to see if they can break it).
-File must be called: secWordFun.cpp
 Write a 2 player word guess program that does the following:
 a. (05) Asks one user to enter in the secret word to be guessed (you can decide on length limits if you want),
 b. (05) Accepts and stores that word into a variable,
@@ -50,11 +43,26 @@ void validWord(string& guess1);
 int main()
 {
     string player1Guess;
+    string answer = "foo";
+    int attempts = 1;
 
     cout << "Player1: " << endl;
     cout << "Please enter a string for secret word ";
-    cin >> player1Guess;
+    //cin >> player1Guess;
+    getline (cin, player1Guess);
     validWord(player1Guess);
+
+    //while(attempts < 5)
+    //{
+        // syntax to compare strings
+     //   if (guess1.compare(answer) != 0)
+      //  {
+       //     cout << "strings are incorrect" << endl;
+        //}
+
+    //}
+
+
 
     /*
      *Uses a loop to repeatedly do the following 
