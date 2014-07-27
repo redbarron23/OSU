@@ -11,16 +11,20 @@ a. (05) Asks one user to enter in the secret word to be guessed (you can decide 
 b. (05) Accepts and stores that word into a variable,
 c. (10) Uses a function to decide if the word is a valid word (no special characters, spaces, or numbers
 should be allowed),
+
 d. (15) Uses a loop to repeatedly do the following (you choose how many guesses allowed, perhaps related to word length):
 i. Show the user what (if any) of the word has been correctly guessed so far,
 (Note: perhaps using underscores or hyphens to denote letters not yet guessed)
 ii. Asks the other user to guess a letter in the secret word,
 (Note: you might consider listing the valid letters to help the user choose) (Note: tell the user how many guesses they have left)
+
 iii. Checks if the guess is a valid letter (best to use a function to keep the code in smaller sections)
 iv. Tells the user whether the letter is in the word (and if it was in it multiple times),
 (Note: likely using an if statement and loop here somewhere...)
+
 v. Changes the list of possible letters to reflect the user's newest guess,
 (Note: this can be tricky, but remember that you can usually use multiple variables to track multiple aspects of related information!)
+
 e. (10) Tells the second user whether they got the secret word or ran out of guesses,
 i. if the second user ran out of guesses, then the program tells them:
 1. what the secret word was,
@@ -42,35 +46,60 @@ The implementation part of the assignment is the .cpp file you submit.
 #include <string>
 using namespace std;
 
-//a function to decide if the word is a valid word 
-//(no special characters, spaces, or numbers should be allowed),
-string validWord(string& guess1); 
+void validWord(string& guess1); 
 int main()
 {
-    cout << "Player1 please enter a string for secret word" << endl;
-    cin >> guess1;
+    string player1Guess;
+
+    cout << "Player1: " << endl;
+    cout << "Please enter a string for secret word ";
+    cin >> player1Guess;
+    validWord(player1Guess);
+
+    /*
+     *Uses a loop to repeatedly do the following 
+     *(you choose how many guesses allowed, perhaps related to word length):
+     *i. Show the user what (if any) of the word has been correctly guessed so far,
+     *(Note: perhaps using underscores or hyphens to denote letters not yet guessed)
+     *ii. Asks the other user to guess a letter in the secret word,
+     */
+
+    //while()
+    //{
+//
+//    }
+
+    /*
+     * iii. Checks if the guess is a valid letter (best to use a function to keep the code in smaller sections)
+     * iv. Tells the user whether the letter is in the word (and if it was in it multiple times),
+     * (Note: likely using an if statement and loop here somewhere...)
+     */ 
+
+    /*
+     * iv. Tells the user whether the letter is in the word (and if it was in it multiple times),
+     * (Note: likely using an if statement and loop here somewhere...)
+     *
+     * v. Changes the list of possible letters to reflect the user's newest guess,
+     * (Note: this can be tricky, but remember that you can usually use multiple variables to track multiple aspects of related     information!)
+     */
 }
 
-string validWord(string& guess1)
+void validWord(string& guess1)
 {
-    // split validWord
     for (int i = 0; i < guess1.length(); i++) {
-        if (isdigit(guess1[0]))
+        //if (isdigit(guess1[0]))
+        if (isdigit(guess1.at(i)))
+        {
+            // str.at(i);
+            cout << "word must be a-z or A-Z";
+        }
+        else if (ispunct(guess1.at(i)))
         {
             cout << "word must be a-z or A-Z";
         }
-        else if (ispunct(guess1[0]))
+        else if (isspace(guess1.at(i)))
         {
             cout << "word must be a-z or A-Z";
         }
-        else if (isspace(guess1[0]))
-        {
-            cout << "word must be a-z or A-Z";
-        }
-
     }
-    // check for numbers and punct.
-    // http://www.cplusplus.com/reference/cctype/ispunct/
-    // http://www.cplusplus.com/reference/cctype/isdigit/
-
 }
