@@ -1,11 +1,31 @@
 * Remember to keep discussion going!
 
+
+/*
+7. Be sure to test that each of your sections of code work correctly in a
+variety of cases.
+After you think your code is good, trade it with another person and try to
+break their code (share with the other person what you find works well and
+what does not).
+(50) Project components (design and implementation):
+1. Remember before you begin coding to draw or write out what this program
+will do. Also, remember to think of what tests you could use as you design
+and code up your solution.
+(Note: you may be able to jump in and program a solution to this program with
+a bit of time, but you need to pay attention to how you decide what
+techniques you are using, why you are using them, and whether there are any
+other options available to you)
+Discuss: what do your designs looked like, how did you go from design to
+program, what did you do to make sure your program was working correctly
+(consider letting someone else test your program to see if they can break it).
+*/
+
 Submission Checklist:
 Exercises (20 pts): 
 =====================
 1. randFun.cpp -  completed
 2. refFun.cpp  -  completed
-3. sort.cpp  
+3. sort.cpp  - completed but still need arbitrary number of items instead of only for three items with function overloading so do four items:?
 4. recFun.cpp  - completed
 5. recFun2.cpp 
 6. savings.cpp
