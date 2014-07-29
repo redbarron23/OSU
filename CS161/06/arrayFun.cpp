@@ -8,9 +8,16 @@
 
 #include <iostream>
 using namespace std;
+#include <string>
 
 int main()
 {
-   cout << "Hello" << endl;
+    string narray;
+    cout << "Please enter a sequence of values: ";
+    getline (cin, narray);
+    cout << narray;
+    // assign int values to an array from string?
+
+   //cout << "Hello" << endl;
    return 0; 
 }
