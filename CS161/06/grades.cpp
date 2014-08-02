@@ -50,19 +50,16 @@ void printHisto(int array1[], int sizeOfArray)
 {
     for (int i=1; i < sizeOfArray + 1; i++)
     {
-        cout << i << endl;
+        //cout << i << endl;
+        if (i == 1)
+            cout << "*" << endl;
+        if (i == 2)
+            cout << "**" << endl;
+        if (i == 3)
+            cout << "***" << endl;
+        if (i == 4)
+            cout << "****" << endl;
+        if (i == 5)
+            cout << "*****" << endl;
     }
 }
-
-                              // size of array
-//void printHisto(int array1[], int number)
-//{
-    // if array1[i] == 1
-    //       print "*"
-    // if array1[i] == 2
-    //       print "**"
- //   for(int i=0; i<number; i++)
-  //  {
-   //     cout << "the value of item " << (i+1) << " is " << array1[i] << endl;
-    //}
-//}
