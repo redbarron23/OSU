@@ -61,7 +61,7 @@ void listValidCharacters()
 }
 
 
-// I need to get guess from  selectPhrase() and pass it in to guessMyPhrase
+// I need to get passPhrase from selectPhrase() and pass it in to guessMyPhrase()
 void guessMyPhrase()
 {
     //Ask the user to guess the secret phrase, one letter at a time
@@ -73,7 +73,13 @@ void guessMyPhrase()
         cout << "Guess the secret phrase: Please enter a character" << endl;
         cin >> guess;
         // need validation here to insure it is a character
-
+        if guess == 'passPhrase'
+        {
+            cout << "Success! You guessed the phrase.";
+            break;
+        else 
+            cout << "Try again!";
+         
 
     } while (attempts < 3);  // will increase later right now just need it to work
 }
@@ -86,11 +92,12 @@ void selectPhrase()
     for(int i = 0; i < randomVar; i++)
     {
         cout << arrayOfWords[i];
-        char guessString = arrayOfWords[i]; // build new string off random
+        char passPhrase = arrayOfWords[i]; // build new string off random
     }
 
-    string guessString; // convert C- String to C++ style
-    cout << guessString;
+    string passPhrase; // convert C- String to C++ style
+    //return passPhrase;
+    cout << passPhrase;
 }
 
 void printArray(int array[], int size){
