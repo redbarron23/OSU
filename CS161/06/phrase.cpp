@@ -11,6 +11,8 @@
 #include <time.h>       /* time */
 using namespace std;
 
+const int arrayOfWordsSize = 14;
+
 //a. Create an array of words consisting only of letters
 void listValidCharacters();
 
@@ -26,15 +28,11 @@ void printArray(int array[], int size);
 
 int main()
 {
-    listValidCharacters();  //
-    guessMyPhrase();
+    listValidCharacters();  //  print out valid alphabet
+    selectPhrase();
+    /guessMyPhrase(arrayOfWords, );
 
-    for(int i=0; i < sizeof(arrayOfWords); i++)
-     {
-         cout << arrayOfWords[i] << endl;
-     }
-
-    printArray(myArray, ARRAY_SIZE);
+    //printArray(myArray, ARRAY_SIZE);
 
     return 0;
 
@@ -42,23 +40,57 @@ int main()
 
 void listValidCharacters()
 {
-    cout << "Valid Characters are: [a-z] or [A-Z]   such as:  ABC or abc or Abc" << endl;
+    char alphaBet[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    char capitalAlphaBet[26] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    cout << "Please enter lower case characters such as:" << endl;
+    for(int i=0; i < sizeof(alphaBet); i++)
+    {
+        cout << alphaBet[i];
+    }
 
+    cout << endl;
+    cout << "or" << endl;
+
+    cout << "Capital Letters such as:" << endl;
+    for(int i=0; i < sizeof(capitalAlphaBet); i++)
+    {
+        cout << capitalAlphaBet[i];
+    }
+
+    cout << endl;
 }
 
+
+// I need to get guess from  selectPhrase() and pass it in to guessMyPhrase
 void guessMyPhrase()
 {
-    char guess;
-    int arrayOfWordsSize = 13;
+    //Ask the user to guess the secret phrase, one letter at a time
+    //cin >> guess;
+    attempts = 0;
+    do
+    {
+        attempts++; 
+        cout << "Guess the secret phrase: Please enter a character" << endl;
+        cin >> guess;
+        // need validation here to insure it is a character
+
+
+    } while (attempts < 3);  // will increase later right now just need it to work
+}
+
+void selectPhrase()
+{
     srand (time(NULL));
     int randomVar = rand()%arrayOfWordsSize;
-    //cout << randomVar << endl;
-    //char arrayOfWords[] = {"I" "Love" "Summer!"};
     char arrayOfWords[] = "I Love Summer!";
-    //Ask the user to guess the secret phrase, one letter at a time
-    cout << "Guess the secret phrase: Please enter a character" << endl;
-    cin >> guess;
+    for(int i = 0; i < randomVar; i++)
+    {
+        cout << arrayOfWords[i];
+        char guessString = arrayOfWords[i]; // build new string off random
+    }
 
+    string guessString; // convert C- String to C++ style
+    cout << guessString;
 }
 
 void printArray(int array[], int size){
