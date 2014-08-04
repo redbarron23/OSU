@@ -1,13 +1,14 @@
 /*
- * 1. (3) Write a function that creates a single dimensional array of int values, 
- * asks the user to input values to fill it, then prints the sum of the values to the user.
- * (be sure to verify that the values entered are integers and to search for or ask about how to clear errors from the cin stream if needed)
- * (you may decide how large the array is)
- * File must be called: arrayFun.cpp
+ * name:  James Hourihane
+ * date:  08/03/2014
+ * class: CS 161
+ * desc:  Create an array from cin and print out array after completion of input
+ * file:  arrayFun.cpp
+ *
+ * credit to Bucky
+ * https://www.youtube.com/watch?v=TzIL4cb23GA
  */
 
-// credit to Bucky
-// https://www.youtube.com/watch?v=TzIL4cb23GA
 
 #include <iostream>
 #include <string>
@@ -39,7 +40,32 @@ int createArray(int array1[], int number)
     {
         cout << "Please input values to fill my Array" << (i+1) << endl;
         cin >> input;
-        array1[i] = input;
+       
+        // maybe add a function and pass input
+        /*
+        if (isdigit((input)))
+        {
+            cout << "must be an integer [0-99]" << endl;
+        }
+        else if (ispunct((input)))
+        {
+            cout << "must be an integer [0-99]" << endl;
+        }
+        else if (isspace((input)))
+        {
+            cout << "must be an integer [0-99]" << endl;
+        }
+        else
+        {
+            array1[i] = input;
+        }  
+        */
+
+            array1[i] = input;
+
+        //cin.clear();
+        //fflush(stdin);
+
     }
     return i;
 }
@@ -47,8 +73,12 @@ int createArray(int array1[], int number)
 
 void printArray(int array1[], int number)
 {
+    int sum = 0;
     for(int i=0; i<number; i++)
     {
-        cout << "the value of item " << (i+1) << " is " << array1[i] << endl;
+        //cout << "the value of item " << (i+1) << " is " << array1[i] << endl;
+        sum = sum + i;
     }
+    // sum is defintely off  
+    cout << sum << endl;
 }

@@ -1,9 +1,10 @@
 /*
- * 5. (5) Programming Project 5.9 from Absolute C++ (p234 in the 5e book) specifically using a two-dimensional array,
- * (tic-tac-toe with two dimensional array)
- * File must be called: tictactoe2.cpp
+ * name:  James Hourihane
+ * date:  08/03/2014
+ * class: CS 161
+ * desc:  create an array of X's and O's to simulate tic-tac-dae using a two dimensional array
+ * file:  tictactoe.cpp
  */
-
 #include <iostream>
 using namespace std;
 

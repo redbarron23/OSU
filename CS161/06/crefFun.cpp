@@ -1,7 +1,10 @@
 /*
- * 2. (3) Write a function that accepts two references to c-style strings and returns whether they have the same values,
- * File must be called: crefFun.cpp
- * Discussion idea: how is a c-style string different than an array of characters?
+ * name:  James Hourihane
+ * date:  08/03/2014
+ * class: CS 161
+ * desc:  Create a function that accepts two references to c-style strings 
+ *        and returns if they have same value
+ * file: crefFun.cpp
  */
 #include <iostream>
 #include <cstring>
