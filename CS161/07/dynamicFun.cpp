@@ -9,7 +9,15 @@ File must be called: dynamicFun.cpp
 #include <iostream>
 using namespace std;
 
+void fillAndPrintIntegers();
+
 int main()
+{
+    fillAndPrintIntegers();
+    return 0;
+}
+
+void fillAndPrintIntegers()
 {
     int* integers;
     int numberofIntegers;
@@ -35,6 +43,4 @@ int main()
     }
 
     cout << endl;
-    return 0;
-
 }
