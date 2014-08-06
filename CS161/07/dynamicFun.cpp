@@ -1,5 +1,19 @@
 /*
-(3) Write a function that creates an array of int values dynamically (with the new keyword), asks the user to input values to fill it, then prints the largest and smallest values stored in the array (you can keep track of this information while getting input from the user if you would like),
+ *  author: James Hourihane
+ *  class:  CS161
+ *  OSU ID is: 932509127
+ *  Desc:   input and ouput dynamic array from a function
+ */
+
+// Outstanding
+/* need to sort array
+ * need integer verification
+ * clear errors from the input stream if needed)
+ */
+
+/*
+(3) Write a function that creates an array of int values dynamically (with the new keyword), 
+asks the user to input values to fill it, then prints the largest and smallest values stored in the array (you can keep track of this information while getting input from the user if you would like),
 File must be called: dynamicFun.cpp
 (be sure to verify that the values entered are integers and remember to search for or ask about how to clear errors from the input stream if needed)
 (you may decide how large the array is)
@@ -21,11 +35,11 @@ void fillAndPrintIntegers()
 {
     int* integers;
     int numberofIntegers;
+    integers = new int[numberofIntegers];
 
     cout << "How many integers do you want me to remember?" << endl;
     cin >> numberofIntegers;
 
-    integers = new int[numberofIntegers];
 
     for (int i=0; i<numberofIntegers;i++)
     {
