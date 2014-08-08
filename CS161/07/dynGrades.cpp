@@ -54,8 +54,14 @@ void fillAndPrintDynamicArray()
     cout << "please enter grades: " << endl;
     for (int i=0; i < SIZE; i++)
         cin >> dArray[i];
-    
-
+/*
+in the for loop I tested whether gradeArr[i] == i.  
+If true then I increased another variable totalGrades until i reached the end of gradeArr[].  
+Then i would print out cout<< totalGrades <<" grade(s) of "<< i <<endl;  
+then I set totalGrades to zero and increment to the next i and ran the test again, 
+doing this for each potential grade you could have received.
+*/
+ 
     for (int i=0; i<6; i++)
     {
         //* 1 grade(s) of 0 
