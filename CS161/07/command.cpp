@@ -16,6 +16,7 @@ and then discuss it on the discussion boards!)
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <sstream>
 
 using namespace std;
 void myFunction(char **argv);
@@ -26,11 +27,25 @@ int main(int argc, char* argv[])
 
     if(argc < 2) 
     {
-        printf("You must provide one numeric argument\n");
+        printf("You did not enter any arguments, You must provide one numeric argument\n");
+        exit(1);
+    }
+    else if (argc > 2)
+    {
+        printf("You provided too many arguments, You must provide one numeric argument\n");
         exit(1);
     }
 
+    // validate that it is a numeric input
+    stringstream ss(argv[1]);
+    int x;
+    if (!(ss >> x))
+    {   
+        cerr << "Invalid number " << argv[1] << '\n';
+        exit(1);
+    }
 
+    //if everything passes then execute the function
     myFunction(argv);
 
     return 0;
