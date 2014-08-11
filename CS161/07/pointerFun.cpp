@@ -1,6 +1,7 @@
 /*
  * author: James Hourihane
  * class:  CS161
+ * program pointerFun.cpp
  * Desc:   to print out pointer values and addresses from function with cin
  * OSU ID is: 932509127
 */
