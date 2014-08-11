@@ -1,29 +1,14 @@
 /*
-(3) Programming Project 5.7 from Absolute C++ (p233 in the 5e book) using dynamic arrays, (Histogram of grades)
-File must be called: dynGrades.cpp
+ * author: James Hourihane
+ * class:  CS161
+ * program: dynGrads.cpp
+ * Desc:   Create a grades histogram with user input
+ * OSU ID is: 932509127
 */
 
-/*
- * 7. Generate a text-based histogram for a quiz given to a class of students. 
- * The quiz is graded on a scale from 0 to 5. 
- * Write a program that allows the user to enter grades for each student. 
- * As the grades are being entered, the program should count, using an array, the number of 0’s, the number of 1’s, the number of 2’s, the number of
- * Solution to * Programming * Project 5.7 3’s, the number of 4’s, and the number of 5’s. 
- * The program should be capable of
- * handling an arbitrary number of student grades.
- * You can do this by making an array of size 6, where each array element is initialized to zero. Whenever a zero is entered, increment the value in the array at index 0. Whenever a one is entered, increment the value in the array at index 1, and so on, up to index 5 of the array.
- * Output the histogram count at the end. For example, if the input grades are 3, 0, 1, 3, 3, 5, 5, 4, 5, 4, then the program should output
- * 1 grade(s) of 0 
- * 1 grade(s) of 1 
- * 0 grade(s) of 2 
- * 3 grade(s) of 3 
- * 2 grade(s) of 4 
- * 3 grade(s) of 5
- */
-
 #include <iostream>
+//#include <sstream>
 using namespace std;
-
 
 //void fillAndPrintStaticArray();
 void fillAndPrintDynamicArray();
@@ -54,6 +39,41 @@ void fillAndPrintDynamicArray()
     cout << "please enter grades: " << endl;
     for (int i=0; i < SIZE; i++)
         cin >> dArray[i];
+
+    /*
+        stringstream ss(dArray[i]);
+        if (!(ss >> dArray[i]))
+        {
+            cerr << "Invalid number " << i << '\n';
+            //cin.clear();
+            //fflush(stdin);
+        } 
+    */
+
+ 
+    int totalGrades[6];
+    /*
+    for (int i=0; i<SIZE; i++)
+    {
+        for (int j=0; j<SIZE; j++)
+        {
+            if (dArray[i] == j)
+                totalGrades[j]++;
+                //cout << totalGrades <<" grade(s) of "<< i <<endl;  
+        }
+             cout << totalGrades[i] <<" grade(s) of "<< i <<endl;  
+
+    }
+    */
+
+    for (int i=0; i<SIZE; i++)
+    {
+        if (dArray[i] == i)
+            totalGrades[i]++;
+        
+        cout << totalGrades[i] <<" grade(s) of "<< i <<endl;  
+    }
+    
 /*
 in the for loop I tested whether gradeArr[i] == i.  
 If true then I increased another variable totalGrades until i reached the end of gradeArr[].  
@@ -61,50 +81,9 @@ Then i would print out cout<< totalGrades <<" grade(s) of "<< i <<endl;
 then I set totalGrades to zero and increment to the next i and ran the test again, 
 doing this for each potential grade you could have received.
 */
- 
-    for (int i=0; i<6; i++)
-    {
-        //* 1 grade(s) of 0 
-        //* 1 grade(s) of 1 
-        cout << "grade(s) of " << dArray[i] << endl;
-    }
     
     // cleanup
     delete [] dArray;  // delete the array
     dArray = NULL;  //set Array to NULL so it won't point anywhere
 
 }
-
-/*
-void fillAndPrintStaticArray()
-{
-    //Write a program that allows the user to enter grades for each student.
-    int *dArray;       // create pointer
-    dArray = new int[CAPACITY]; // do a new on  dynamic array
-
-    // initialise everything to 0
-    dArray[0] = 0;
-    dArray[1] = 0;
-    dArray[2] = 0;
-    dArray[3] = 0;
-    dArray[4] = 0;
-    dArray[5] = 0;
-    
-    //cout << "dArray: "; // prints out first element
-    //cout << dArray[0];  // same
-
-    // print inputed grades
-    for (int i=0; i<6; i++)
-    {
-        //1 grade(s) of 0
-        cout << i << " " << dArray[i] << "grade(s)" of << " ";
-    }
-
-    //cout << endl;
-    
-    // cleanup
-    delete [] dArray;  // delete the array
-    dArray = NULL;  //set Array to NULL so it won't point anywhere
-
-}
-*/
