@@ -11,7 +11,9 @@ struct contact {
 void init(contact *c)
 {
     c->name = "jen";
-    (*c).addr = "oregon";
+    // this is another way of doing it
+    //(*c).addr = "oregon";
+    c->addr = "oregon";
     c->phone = 123456789;
 }
 
