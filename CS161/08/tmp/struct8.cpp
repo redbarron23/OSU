@@ -21,11 +21,13 @@ void print_vehicle(vehicle &v);
 
 int main()
 {
+    // initialise a car lot
     vehicle car_lot[3];
 
     vehicle my_car;
     car_lot[0] = my_car;
 
+    //make two cars 
     set_vehicle(car_lot[0], "The egg", "Ford", "Escort", "white", 4, 4, 6, 2.0, 30.5);
     set_vehicle(car_lot[1], "DaFocus", "Ford", "Focus", "shiny grey", 4, 4, 8, 2.4, 31.22);
 
