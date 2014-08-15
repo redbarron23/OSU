@@ -1,16 +1,21 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 struct contact {
-    string name;
+    //string name;
+    char name[20];
+    //const char *name[20];
     string addr;
     int phone;
 };
 
 void init(contact &c)
 {
-    c.name = "jen";
+    //c.name = "jen";
+    strcpy(c.name, "jen"); 
+    //strcpy( Book1.title, "Learn C++ Programming");
     c.addr = "oregon";
     c.phone = 123456789;
 }
@@ -27,7 +32,6 @@ int main()
     cout << one_contact.phone << endl;
 
     return 0;
-
 }
 
 

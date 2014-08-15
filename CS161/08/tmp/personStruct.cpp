@@ -41,6 +41,7 @@ and eventually returns (a line heading back out of the program box)
 
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 struct person 
@@ -60,33 +61,31 @@ my_person.name[3])
 */
 
 // prototype, note the pass by reference
-void set_person(person &p, char name, int age);
-void print_person(person &p);
+//void set_print_person(person &p);
+void set_print_person(person &p, char name, int age )
 
 int main()
 {
-    // first person
-    person my_name;
-
-    // pass in structure here
-    set_person(my_name, "Barack Obama", 55);
-   
-    // output person1 from print function
-    print_person(my_name);
-
+    person my_person;
+    
+    set_print_person();
     return 0;
 }
 
 
-
-void set_person(person &p, char name, int age)
+// b. create a function: person new_person() that creates an instance of that struct, asks the user for values
+// to assign to that struct's member values, and returns that struct
+void (person &p, char &my_name, int my_age )
 {
-    p.name = name;
-    p.age = age;
-}
+    cout << "Please enter a name: " << endl;
+    cin >> my_name;
+    cout << "Please enter their age: " << endl;
+    cin >> my_age;
 
-void print_person(person &p)
-{
+    //p.name = name;
+    strcpy(p.name, my_name);
+    p.age = my_age;
+
     cout << "person's name: " << p.name << endl;
     cout << "person's age: " << p.age << endl;
 }

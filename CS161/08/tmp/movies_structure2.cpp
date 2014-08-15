@@ -8,13 +8,16 @@ struct movies_t
 {
     string title;
     int year;
-} mine, yours;
+//} mine, yours;
+};
 
 void printmovie (movies_t movie);
 
 int main()
 {
     string mystr;
+    struct movies_t mine;
+    struct movies_t yours;
 
     mine.title = "2001 A Space Odyssey";
     mine.year = 1968;
