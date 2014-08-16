@@ -1,8 +1,8 @@
 /*
  * Author: james Hourihane
  * class: CS 161
- * program name:
- * Desc:
+ * program name: gradeClass.cpp
+ * Desc: input and ouput student's AverageScore and Final letter grade based on quiz, midterm and final
  */
 
 /*
@@ -14,10 +14,79 @@ c. The final exam counts for 50% of the grade, the midterm counts for 25%, and t
 Any grade of 90 or more is an A, any grade of 80 or more (but less than 90) is a B, any grade of 70 or more (but less than 80) is a C, any grade of 60 or more (but less than 70) is a D, and any grade below 60 is an F. The program will read in the student’s scores and output the student’s record, which consists of two quiz and two exam scores as well as the student’s average numeric score for the entire course and final letter grade. Define and use a structure for the student record.
  */
 
+/* weight of grades
+ * quiz1 = 10 pts    .. ...........//12.5% 
+ * quiz2 = 10 pts    ............  //12.5% 
+ * midterm = 100 pts ............ // 25% of grade
+ * final = 100 pts   .........// 50% of grade 
+ */
+
 #include <iostream>
 using namespace std;
 
+struct studentRecord
+{
+   double quiz1;
+   double quiz2;
+   double midTerm;
+   double final;
+   double averageNumericScore;
+   //char finalLetterGrade[4];
+   string finalLetterGrade;
+};
+
+studentRecord newStudentRecord ( )
+{
+    studentRecord myStudentRecord; // studentRecord to be returned
+
+    cout << "Enter the person's quiz1: ";
+    //cin.get >> myStudentRecord.quiz1;
+    cin  >> myStudentRecord.quiz1;
+
+    cout << "Enter the person's quiz2: ";
+    //cin.get >> myStudentRecord.quiz2;
+    cin >> myStudentRecord.quiz2;
+
+    cout << "Enter the person's midTerm: ";
+    //cin.get >> myStudentRecord.midTerm;
+    cin >> myStudentRecord.midTerm;
+
+    cout << "Enter the person's final: ";
+    //cin.get >> myStudentRecord.final;
+    cin >> myStudentRecord.final;
+
+   // add up all the scores here and weight them
+   // also need to stick the finalLetterGrade back into the same struct; 
+
+    return(myStudentRecord);
+}
+
 int main()
 {
+     studentRecord myStudentRecord = newStudentRecord();
+     //studentRecord myStudentRecord;
+     // if (0 <= number && number <= 10)
+     //
+     // Hopefully not over 100 no test condition for that yet
+     if (myStudentRecord.finalLetterGrade > 90.0 && myStudentRecord.finalLetterGrade < 101.0)
+     {
+         cout << "student got an A" << endl;
+     }
+     else if (myStudentRecord.finalLetterGrade > 80.0 && myStudentRecord.finalLetterGrade < 90.0)
+     {
+         cout << "student got an B" << endl;
+     }
+     else if (myStudentRecord.finalLetterGrade > 70.0 && myStudentRecord.finalLetterGrade < 80.0)
+     {
+         cout << "student got an C" << endl;
+     }
+     else if (myStudentRecord.finalLetterGrade > 60.0 && myStudentRecord.finalLetterGrade < 70.0)
+     {
+         cout << "student got an D" << endl;
+     }
+     else
+     {
+         cout << "student got an F" << endl;
+     } // ouch failed
 
 }
