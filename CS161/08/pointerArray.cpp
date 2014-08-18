@@ -1,36 +1,87 @@
 /*
  * Author: james Hourihane
  * class: CS 161
- * program name:
- * Desc:
+ * program name: pointerArray.cpp
+ * Desc: Create a person struct using pointers from stdin 
+ * and adding 5 other members as well for a total of 6 
+ * print out all 6 memebers using pointer derefencing
  */
 
-/*
- *5. (4) Lastly create an array of pointer to the struct (person * friend_ptrs[5]), fill in the array (possibly with the 
-friends from the array of direct struct variables), and try to access their member values...
-File must be called: pointerArray.cpp
-Note:
-because this is an array we will be able to use either square brackets ( [] ) or pointer arithmetic (I avoid 
-teaching this to you in this class...),
-(example: friends_ptrs[0] gives us a pointer to a person...)
-we then get a pointer to a person, which we can get the member values with the arrow notation (->) or by
-dereferencing with the star ( * ) and then using a dot ( . )
-(example: friends_ptrs[0]->name or (*friends_ptrs[0]).name )
-having different options to access variables may seem pointless right now, but you could store 
-*friends_ptrs[0] in a variable (say cur_friend) and use it to access each of the members (cur_friend.name
-and cur_friend.age), which might save a bit of time with a large structure; imagine having even 10 members 
-to access, which would you prefer to type (consolidated location for error) and look at (cur_friend is more 
-obvious to me than some complex approach to dereferencing)?
-For some (optional) extra practice, do the above instead using dynamic memory (new and delete keywords)
-Note: you may find this post helpful, though they use dynamic memory in the example: 
-http://www.cplusplus.com/forum/beginner/35631/Note: you may find this code useful, but should wait until you have tried the above first: 
-10_struct_pointer_array_demo.cpp
-*/
-
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
-int main()
-{
+const int NAMELEN = 20;     // Max name length
+const int FRIENDS = 5;      // how many Friends we have
 
+//typedef struct pers {     // short experiment with typedef 
+struct person {     // Personal data
+    char name[NAMELEN];     // Name
+    int  age;       // Age
+};
+
+// Create another person and add someone from stdin
+/*
+ * also later we will use person struct via pointers
+ * to add people into an array
+ */
+person new_person ( )
+{
+    person my_person;       // New person
+
+    cout << "Enter the new person's name: ";
+    cin.get (my_person.name, NAMELEN+1);  // Read name
+
+    cout << "Enter the age of " << my_person.name << ": ";
+    cin >> my_person.age;
+    return(my_person);
+}
+
+/*
+ * The address of my_person is assigned to the pointer *person_ptr
+ * and then you can dereference the pointer with the arrow notation
+ * i.e. ptr ->member
+ * then arrayName friends is declared and has access to person struct 
+ * members are then pushed on to the stack and are accessible via subscript of by a loop
+ */
+
+int main ( )
+{
+    person my_person = new_person();  // Get person's info
+
+    person *person_ptr=&my_person;
+    cout << "Address of person is: " << person_ptr << endl;
+
+    cout << "You have entered: " << person_ptr->name << " Age: " << person_ptr->age << endl << endl;
+
+    // array of the struct  called friends that containts arrays
+    person friends[FRIENDS];
+    // initializing the array with the folks at Bedrock
+    strcpy (friends[0].name, "Fred"); friends[0].age = 45;
+    strcpy (friends[1].name, "Barney"); friends[1].age = 42;
+    strcpy (friends[2].name, "Wilma"); friends[2].age = 44;
+    strcpy (friends[3].name, "Betty"); friends[3].age = 22;
+    strcpy (friends[4].name, "Dino"); friends[4].age = 3;
+
+    // print out the array of arrays
+    //for (int p = 0; p < FRIENDS; p++) {
+    //    cout << "Your friend " << friends[p].name << " is " << friends[p].age << "." << endl;
+    //}
+   
+    person *friends_ptr[FRIENDS];
+    
+    for (int p = 0; p < FRIENDS; p++)
+    {
+        friends_ptr[p] = &friends[p];
+    }
+
+
+    // print out dereferencing
+    for (int p = 0; p < FRIENDS; p++)
+    {
+        cout << friends_ptr[p]->name << " " << friends_ptr[p]->age << endl;
+    } 
+
+    return(0);
 }
