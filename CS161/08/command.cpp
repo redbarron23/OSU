@@ -1,8 +1,8 @@
 /*
  * Author: james Hourihane
  * class: CS 161
- * program name:
- * Desc:
+ * program name: command.cpp
+ * Desc: take in user name and age and print it out by pointer
  */
 
 /*
@@ -14,9 +14,39 @@
  */
 
 #include <iostream>
+#include <cstring>
+#include <stdlib.h>
 using namespace std;
 
-int main()
+const int NAMELEN = 20;     // Max name length
+
+struct person {     // Personal data
+    char name[NAMELEN];     // Name
+    int  age;       // Age
+};
+
+
+
+int main(int argc, char* argv[])
 {
+      struct person my_person;
+      person *person_ptr=&my_person;
+
+      if(argc == 3)
+      {
+          // input name and age into struct 
+          strcpy ( my_person.name, argv[1]);
+          my_person.age = atoi(argv[2]);
+          //atoi(argv[i])
+          
+          // print out name and age
+          cout << "You have entered: " << person_ptr->name << " Age: " << person_ptr->age << endl << endl;
+      } 
+      else
+      {
+          cout << "Usage:  command name age " << endl;
+      }
+
+      return(0);
 
 }
