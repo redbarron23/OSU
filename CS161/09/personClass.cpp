@@ -14,7 +14,7 @@ const int NAMELEN = 20;     // Max name length
 class person
 {
     public:
-        char name[20];
+        char name[NAMELEN];
         int age;
         void having_birthday();
         person();
