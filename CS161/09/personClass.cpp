@@ -1,3 +1,10 @@
+/*
+ * Author: james Hourihane
+ * class: CS 161
+ * program name: personClass.cpp
+ * Desc: create object, cin user input and retrieve objects from class using dot notation
+ */
+
 #include <iostream>
 #include <string>
 using namespace std;
