@@ -1,0 +1,75 @@
+#include <iostream>
+#include <limits>
+#include <cstring>
+
+using namespace std;
+
+const int NAMELEN = 20;     // Max name length
+
+class person
+{
+public:
+    void setName(char n[NAMELEN+1]);
+    void setAge(int age);
+    char *getName(void);
+    int  getAge(void);
+    person(); // constructor
+    void having_birthday();
+
+private:
+    char name[NAMELEN+1];
+    int age;
+};
+
+person::person ( void )
+{
+    cout << "Object is being created." << endl;
+}
+
+void person::having_birthday()
+{
+    age += 1;  // parameter incremented
+}
+
+void person::setName ( char n[NAMELEN+1] )
+{
+    strcpy(name, n);
+}
+
+void person::setAge ( int a )
+{
+    age = a;
+}
+
+char *person::getName ( void )
+{
+    return name;
+}
+
+int person::getAge()
+{
+    return age;
+}
+
+int main()
+{
+    person birthday_person;   // Celebrating a brithday
+    char readname[NAMELEN+1]; // Values read
+    int  age;
+
+    cout << "Enter the new person's name: ";
+    cin.get (readname, NAMELEN+1);  // Read name
+    birthday_person.setName(readname);
+    //cin.ignore (numeric_limits<streamsize>::max(), '\n'); // Extra text
+
+    cout << "Enter the age of " << readname << ": ";
+    cin >> age;
+    birthday_person.setAge(age);
+
+    birthday_person.having_birthday();
+
+    cout << "Happy birthday! " << birthday_person.getName() << " You are: " << birthday_person.getAge() << endl;
+    return(0);
+}
+
+
