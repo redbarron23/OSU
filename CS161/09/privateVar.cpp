@@ -21,31 +21,41 @@ private:
     int age;
 };
 
+// not sure why I can print something here
 //~person()
 //{
     //cout << "deconstructing" << endl;
 //}
 
 
+// constructor
+// still unable to set scope here
 person::person ( void )
 {
     cout << "Object is being created." << endl;
 }
 
+// function that increments age
 void person::having_birthday()
 {
     age += 1;  // parameter incremented
 }
 
+// setters or mutators
+// set name
 void person::setName ( char n[NAMELEN+1] )
 {
     strcpy(name, n);
 }
 
+// setters or mutators
+// set age
 void person::setAge ( int a )
 {
     age = a;
 }
+
+// starting the getters or accessors 
 
 // has to be a pointer else it will return only on char at a time
 // http://www.gamedev.net/topic/574855-accessor-getter-function-for-a-c-string-character-array/
@@ -73,10 +83,9 @@ int main()
     cin >> age;
     birthday_person.setAge(age);
 
+    // calling function here to increment age
     birthday_person.having_birthday();
 
     cout << "Happy birthday! " << birthday_person.getName() << " You are: " << birthday_person.getAge() << endl;
     return(0);
 }
-
-
