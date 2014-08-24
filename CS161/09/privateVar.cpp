@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 #include <cstring>
 
 using namespace std;
@@ -14,12 +13,19 @@ public:
     char *getName(void);
     int  getAge(void);
     person(); // constructor
+    ~person() {};
     void having_birthday();
 
 private:
     char name[NAMELEN+1];
     int age;
 };
+
+//~person()
+//{
+    //cout << "deconstructing" << endl;
+//}
+
 
 person::person ( void )
 {
@@ -41,6 +47,8 @@ void person::setAge ( int a )
     age = a;
 }
 
+// has to be a pointer else it will return only on char at a time
+// http://www.gamedev.net/topic/574855-accessor-getter-function-for-a-c-string-character-array/
 char *person::getName ( void )
 {
     return name;
@@ -60,7 +68,6 @@ int main()
     cout << "Enter the new person's name: ";
     cin.get (readname, NAMELEN+1);  // Read name
     birthday_person.setName(readname);
-    //cin.ignore (numeric_limits<streamsize>::max(), '\n'); // Extra text
 
     cout << "Enter the age of " << readname << ": ";
     cin >> age;
