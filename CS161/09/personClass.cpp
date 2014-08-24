@@ -11,15 +11,18 @@ using namespace std;
 
 const int NAMELEN = 20;     // Max name length
 
+// creating a class called person
 class person
 {
     public:
         char name[NAMELEN];
         int age;
         void having_birthday();
+        //~having_birthday();
         person();
 }; // don't forget the semicolon
 
+// create constructor here
 person::person(void)
 {
    cout << "Object is being created" << endl;
@@ -52,6 +55,7 @@ int main()
 
     birthday_person.having_birthday();
 
+    // print out using accessor or getter
     cout << "Happy birthday! " << birthday_person.name << " You are: " << birthday_person.age << endl;
 
     return(0);
