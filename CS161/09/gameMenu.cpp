@@ -1,36 +1,18 @@
-
+/*
+ * class: CS161
+ * name: James Hourihane
+ * program: gameMenu.cpp
+ * desc: create menu of options to choose to play games do functions etc
+*/
 #include <iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
-// Hello world program
-void hello_world()
-{
-    cout << endl << "Hello World!" << endl; 
-}
-
-// Echo program
-void echo()
-{
-    
-}
-
-// Number guess program
-void number_guess()
-{
-    
-}
-
-
-// Display the main menu of the program
-void show_menu()
-{
-    cout << endl << "GAME MENU:"<<endl;
-    cout << "1. Run the 'Hello World' program"<< endl;
-    cout << "2. Run the 'Echo' program" << endl;
-    cout << "3. Run the Number guessing program" << endl;
-    cout << "4. Run the Number guessing program" << endl;
-    cout << endl;
-}
+void hello_world();
+void echo();
+void number_guess();
+void show_menu();
 
 // Read menu choice. Keep prompting for choice until user
 // enters valid value. Display appropriate error messages.
@@ -94,3 +76,73 @@ int main()
     return(0);
 }
 
+// Hello world program
+void hello_world()
+{
+    cout << endl << "Hello World!" << endl; 
+}
+
+// Echo program
+void echo()
+{
+    
+}
+
+// Number guess program
+void number_guess()
+{
+    bool goOn=true;
+    while(goOn)
+    {
+        srand(time(0));
+        int number=rand()%10+1;;
+        int guess;
+
+        char answer;
+        cout<<"Im thinking of a number between 1-10. Take a guess: ";
+        cin>>guess;
+    while(guess!=number)
+    {
+
+        if(guess>number)
+        {
+            cout<<"Too high,Guess again: ";
+            cin>>guess;
+        }
+
+        if(guess<number)
+        {
+            cout<<"Too low,Guess again: ";
+            cin>>guess;
+        }
+
+    }
+
+    if(guess==number)
+    {
+        cout<<"Congrats!! You got it.";
+    }
+
+    cout<<"would you like to play again? Enter y or n: ";
+    cin>>answer;
+
+    if(answer!='y')
+    {
+        goOn=false;
+       cout<<"thanks for playing!"<<endl;
+    }
+
+    }
+
+    
+}
+
+// Display the main menu of the program
+void show_menu()
+{
+    cout << endl << "GAME MENU:"<<endl;
+    cout << "1. Run the 'Hello World' program"<< endl;
+    cout << "2. Run the 'Echo' program" << endl;
+    cout << "3. Run the Number guessing program" << endl;
+    cout << endl;
+}
