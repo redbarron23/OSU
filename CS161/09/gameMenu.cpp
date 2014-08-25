@@ -149,5 +149,6 @@ void show_menu()
     cout << "1. Run the 'Hello World' program"<< endl;
     cout << "2. Run the 'Echo' program" << endl;
     cout << "3. Run the Number guessing program" << endl;
+    cout << "4. Exit the program" << endl;
     cout << endl;
 }
