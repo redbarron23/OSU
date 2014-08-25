@@ -1,3 +1,10 @@
+/*
+ *   CS161
+ *   author: James Hourihane
+ *   program name: privateVar.cpp
+ *   desc: "Create a class with getter and setter and access values via dot notation"
+ */
+
 #include <iostream>
 #include <cstring>
 
@@ -59,6 +66,7 @@ void person::setAge ( int a )
 
 // has to be a pointer else it will return only on char at a time
 // http://www.gamedev.net/topic/574855-accessor-getter-function-for-a-c-string-character-array/
+// http://forums.devx.com/showthread.php?174650-Accessor-Functions-(getter)-for-C-String-(Character-Array)-Members
 char *person::getName ( void )
 {
     return name;
