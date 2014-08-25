@@ -85,7 +85,12 @@ void hello_world()
 // Echo program
 void echo()
 {
-    
+    string s;
+    cout << "Enter a string: ";
+    //getline(cin, s);
+    cin >> s;
+    cout << s;
+    //cin.get();
 }
 
 // Number guess program
