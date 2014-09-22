@@ -1,0 +1,52 @@
+/*
+ * 1. Write a 1 player phrase guess program that does the following (this can be thought of as an expansion of features onto the word guess game):
+ * File must be called: phrase.cpp
+ * ￼a. (05) Create an array of words (I suggest you use std::string) to select a random phrase from (these can
+ * be hard-coded into an array) consisting only of letters (you may create a harder version including other characters as an extra and separate feature),
+ * b. (05) Select a phrase by randomly selecting a number of words from your array of words (you can decide on word limits if you want, perhaps a small random number?),
+ * Note: This means there should be a random number (say 2-5 words or something) of random words (chosen from the array of words); no the phrase does  not need to make sense, but you may add categories for your words so that the phrase does make sense if you would like.
+ * c. (25) Ask the user to guess the secret phrase, one letter at a time, including at least the following features during each round of guessing (you can add more!):
+ * Note (extra credit option): this means you have one long phrase that is effectively one long string of letters all being guessed. This also means   that you do not need to guess the phrase one word at a time (we may use that in a future assignment...), but if you choose to do this and do it     well while demonstrating recursion, then you might earn extra credit (remember to mention it in your report and be obvious that you are going for   this option).
+ * i. (07) Show the user what (if any) of the phrase has been correctly guessed so far, Note: perhaps use underscores or hyphens to denote letters not yet guessed,
+ * Discuss: How could we could represent this “partially revealed” version of the phrase separate of the actual phrase?
+ * ii. (07) List the valid letters to help the user (remember that an array and a loop can go quite well together...),
+ * Discuss: How could we represent the list of valid letters, could this be similar to the partially revealed version of the phrase?
+ * iii. (02) Tell the user how many guesses they have left (you may decide the number of guesses to be based on the word count or for the whole phrase length),
+ * iv. (02) Ask the user to guess a letter of the secret phrase,
+ * v. (02) Tell the user whether the letter is in the phrase and how many times,
+ * Note: likely using an if statement and loop here somewhere...
+ * vi. (05)Changethelistofpossibleletterstoreflecttheuser'snewestguess
+ * Note: this can be tricky, but now that we have arrays it should not be so bad to keep track of!
+ * d. (10) Tell the user:
+ * i. whether they discovered the secret phrase or not,
+ * ii. if they guessed the secret phrase, then also say how many guesses they had left,
+ * iii. if they instead did not discover the phrase (by running out of guesses), then the tell them what the secret phrase was and what letters were   still missing from the phrase,
+ * Discuss: How can we find out what the missing letters were?
+ */
+
+/*
+ *for(int k = 0; k < secretWord.length(); k++) //Locating the guessed letter in the hidden string
+{
+
+   if(letterIn == letterBank[k])
+   {
+      letterBank[k] = '-';
+   }
+}
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// a. Create an array of words consisting only of letters
+// b. Select a phrase by randomly selecting a number of words from your array of words
+// c. Ask the user to guess the secret phrase, one letter at a time
+// Show the user what (if any) of the phrase has been correctly guessed so far, 
+// Note: perhaps use underscores or hyphens to denote   letters not yet guessed,
+
+int main()
+{
+   cout << "Hello" << endl;
+   return 0; 
+}

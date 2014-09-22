@@ -1,0 +1,360 @@
+/*
+ * author: James Hourihane
+ * class:  CS161
+ * Desc:   Create a dynamic tic-tac-doe using dynamic  arrays
+ * OSU ID is: 932509127
+*/
+
+/*
+ * (5) Programming Project 5.9 from Absolute C++ (p234 in the 5e book) 
+ * using dynamic arrays, (tic-tac-toe with dynamic arrays... 
+ * you may choose the number of dimensions in your array 
+ * but you must discuss why you chose that and what your alternatives were!)
+ * File must be called: dynttt.cpp
+ */
+
+/*
+ * but you must discuss why you chose that and what your alternatives were!)
+ * go with 3 x 3 array
+ * if I went with a 3 x 4 or 4 x 3 it would be jagged and I don't know how to do that yet
+ */
+#include <iostream>
+#include <string>
+#include <cctype>   // isdigit
+using namespace std;
+
+void promptXandY(char array1[], int sizeOfArray);
+void printBoard(char array1[], int sizeOfArray1);
+
+int main()
+{
+    string playerX = "X";
+    string PlayerO = "O";
+
+    return 0;
+
+}
+
+void promptXandY(char array1[], int sizeOfArray)
+{
+    int x, y;
+    cout << "User X please enter a number in corresponding space [1-9]";
+    cin  >> x;
+    array1[x] = 'X';
+
+    cout << "User O please enter a number in corresponding space[1-9]";
+    cin  >> y;
+    array1[y] = 'O';
+}
+
+
+
+/********************************************************
+Author: Sarah Dugan
+Date Created: 7/27/14
+Last Modification Date: 8/2/14
+File name: tictactoe2.cpp
+ 
+ Overview:
+    This program allows two users to play tic-tac-toe, 
+    Player X and Player O. The game prompts users to enter
+    where they want to place their X or O on the board. As
+    The players enter their selections the board updates with
+    their choices. The game determines if Player X or Player O
+    wins, or if the game is a draw. 
+
+    This game uses a 2-D array. 
+
+ Input:
+    Input includes Player X and Player O entering which number on
+    the game board they wish to place their X or O, respectively. 
+    
+ Output:
+    Output shows the players the game board, numbered 1-9.
+    Output prompts Player X and Player O to input their seletion on
+    the board. If input is erroneous, output will tell the user
+    this and ask for a correct entry. Output shows an updated
+    game board with X's and O's with each play. Output also
+    tells users if one player has won or if the game is a draw.
+
+*********************************************************/
+
+#include <iostream>
+#include <string>
+#include <cctype>   // isdigit
+using namespace std;
+
+// functions
+bool boardUpdateO(string oPlayer);
+bool boardUpdateX(string xPlayer);
+void showBoard();
+string checkInput(string userEntry);
+bool tTtWinner (string board[][3]);
+void whosTurn(int &turn);
+
+//array - global
+string board[3][3] = {{"1","2","3"}, {"4","5","6"}, {"7","8","9"}};   // establish tic tac toe board
+
+// global variables
+string xPlayer = "X";
+string oPlayer = "O";
+bool winner = false;          //  idea from Piazza discussion Jeremy Fischman 7/30/14 discussion started 7/29/14
+int turn = 0;
+
+int main () {
+        
+    string xPlayer = "X";
+    string oPlayer = "O";
+        
+    cout << "Welcome to tic tac toe. Player 1 will be Player X, Player 2 will be Player O.\n"; 
+    
+    showBoard();
+    
+    do {
+        
+        whosTurn(turn);
+        
+        if ((turn == 9) && (winner == false)){
+            cout << "It's a draw! No one wins!" << endl;
+            winner = true;
+        }
+
+    } while (winner == false);
+    
+    return 0;
+}
+
+//////////////////  function to place X's on board
+
+bool boardUpdateX(string xPlayer){  
+        
+        if (xPlayer == "1"){
+            
+            if (board[0][0] == "O" || board[0][0] == "X"){
+                return false;
+            }
+             board[0][0] = "X";
+             
+        } else if (xPlayer == "2"){
+            if (board[0][1] == "O" || board[0][1] == "X"){
+                return false;
+            }
+            board[0][1] = "X";
+            
+        } else if (xPlayer == "3"){
+            if (board[0][2] == "O" || board[0][2] == "X"){
+                return false;
+            }
+             board[0][2] = "X";
+             
+        } else if (xPlayer == "4"){
+            if (board[1][0] == "O" || board[1][0] == "X"){
+                return false;
+            }
+             board[1][0] = "X";
+             
+        } else if (xPlayer == "5"){
+            if (board[1][1] == "O" || board[1][1] == "X"){
+                return false;
+            }
+             board[1][1] = "X";
+             
+        } else if (xPlayer == "6"){
+            if (board[1][2] == "O" || board[1][2] == "X"){
+                return false;
+            }
+             board[1][2] = "X";
+             
+        } else if (xPlayer == "7"){
+            if (board[2][0] == "O" || board[2][0] == "X"){
+                return false;
+            }
+             board[2][0] = "X";
+             
+        } else if (xPlayer == "8" ){
+            if (board[2][1] == "O" || board[2][1] == "X"){
+                return false;
+            }
+             board[2][1] = "X";
+             
+        } else if (xPlayer == "9"){
+            if (board[2][2] == "O" || board[2][2] == "X"){
+                return false;
+            }
+             board[2][2] = "X";
+        } 
+     
+    return true;
+}
+
+///////////////// function to place O's on board
+
+bool boardUpdateO(string oPlayer){
+        
+        if (oPlayer == "1"){
+            if (board[0][0] == "X" || board[0][0] == "O"){
+                return false;
+            }
+             board[0][0] = "O";
+             
+        } else if (oPlayer == "2"){
+            if (board[0][1] == "X" || board[0][1] == "O"){
+                return false;
+            }
+            board[0][1] = "O";
+            
+        } else if (oPlayer == "3"){
+            if (board[0][2] == "X" || board[0][2] == "O"){
+                return false;
+            }
+             board[0][2] = "O";
+             
+        } else if (oPlayer == "4"){
+            if (board[1][0] == "X" || board[1][0] == "O"){
+                return false;
+            }
+             board[1][0] = "O";
+             
+        } else if (oPlayer == "5"){
+            if (board[1][1] == "X" || board[1][1] == "O"){
+                return false;
+            }
+             board[1][1] = "O";
+             
+        } else if (oPlayer == "6"){
+            if (board[1][2] == "X" || board[1][2] == "O"){
+                return false;
+            }
+             board[1][2] = "O";
+             
+        } else if (oPlayer == "7"){
+            if (board[2][0] == "X" || board[2][0] == "O"){
+                return false;
+            }
+             board[2][0] = "O";
+             
+        } else if (oPlayer == "8"){
+            if (board[2][1] == "X" || board[2][1] == "O"){
+                return false;
+            }
+             board[2][1] = "O";
+             
+        } else if (oPlayer == "9"){
+            if (board[2][2] == "X" || board[2][2] == "O"){
+                return false;
+            }
+             board[2][2] = "O";
+        } 
+    
+    return true;
+}
+///////////////////////////////////////////////// function to show updated board
+void showBoard(){
+    
+    cout << endl << endl;
+    
+    for (int i = 0; i < 3; i++){
+                
+        for (int j = 0; j < 3; j++){
+        cout << board[i][j] << "  ";
+        }
+        cout << endl;
+    }
+    cout << endl << endl;
+}
+/////////////////////////////////    function to check players input 
+
+string checkInput(string userEntry){
+        
+    do {
+        if (userEntry.length() == 0 || userEntry.length() > 1){           // if player presses enter or length > 1
+            cout << "Invalid entry. Please enter a number from the board: " << endl;
+            getline(cin,userEntry);
+            
+        } else if (userEntry.at(0) == ' '){                         // if space is entered
+            cout << "Invalid entry. Please enter a number from the board: " << endl;
+            getline(cin,userEntry); 
+                
+        } else if (isdigit(userEntry.at(0)) == 0 || userEntry.at(0) == '0' ){           // if entry is not 1-9
+            cout << "Invalid entry. Please enter a number from the board: " << endl;
+            getline(cin,userEntry);   
+        }
+        
+    } while (userEntry != "1" && userEntry != "2" && userEntry != "3" && userEntry != "4" && userEntry != "5" && userEntry != "6" && userEntry != "7" && userEntry != "8" && userEntry != "9");
+    
+    return userEntry;
+}
+//////////////////////////////////// function to check for winner idea from Piazza discussion Jeremy Fischman 7/30/14 (topic started 7/29/14)
+
+bool tTtWinner (string board[][3]){
+    
+    bool winner = false;
+
+    if ((board [0][0] == board[0][1]) && (board[0][1] == board [0][2])){
+        cout << "Player " << board[0][0] << " is the winner!!" << endl;
+        winner = true;
+    } else if ((board [1][0] == board[1][1]) && (board[1][1] == board [1][2])){
+        cout << "Player " << board[1][0] << " is the winner!!" << endl;
+        winner = true;
+    } else if ((board [2][0] == board[2][1]) && (board[2][1] == board [2][2])){
+        cout << "Player " << board[2][0] << " is the winner!!" << endl;
+        winner = true;
+    } else if ((board [0][0] == board[1][0]) && (board[1][0] == board [2][0])){
+        cout << "Player " << board[2][0] << " is the winner!!" << endl;
+        winner = true;
+    } else if ((board [0][1] == board[1][1]) && (board[1][1] == board [2][1])){
+        cout << "Player " << board[0][1] << " is the winner!!" << endl;
+        winner = true;  
+    } else if ((board [0][2] == board[1][2]) && (board[1][2] == board [2][2])){
+        cout << "Player " << board[0][2] << " is the winner!!" << endl;
+        winner = true;    
+    } else if ((board [2][0] == board[1][1]) && (board[1][1] == board [0][2])){
+        cout << "Player " << board[2][0] << " is the winner!!" << endl;
+        winner = true;    
+    } else if ((board [0][0] == board[1][1]) && (board[1][1] == board [2][2])){
+        cout << "Player " << board[0][0] << " is the winner!!" << endl;
+        winner = true;    
+    } else {
+        winner = false;
+    } 
+    return winner;
+}
+
+///////////////////////////////////////////////////////////////// function to determine whose turn it is
+///////////////////////////////////////////////////////////////// it worked when I put everything in this function, error checking and board updating, didn't work when it was a list of functions in the main 
+
+void whosTurn(int &turn){
+        
+    if (turn % 2 == 0){
+        
+        cout << "Player X, please enter the number of the location you want to place an 'X': ";
+        getline(cin,xPlayer);
+        turn++;
+        
+        while (boardUpdateX(checkInput(xPlayer)) == false){
+            cout << "That number is not available. Please choose an available number: ";
+            getline(cin,xPlayer); 
+        }   
+            
+        showBoard();
+        
+        winner = tTtWinner (board);
+        
+    } else {
+        cout << "Player O, please enter the number of the location you want to place an 'O': ";
+        
+        getline(cin,oPlayer);
+        
+        turn++;
+        
+        while (boardUpdateO(checkInput(oPlayer)) == false){   // check input and update board
+            cout << "That number is not available. Please choose an available number: ";
+            getline(cin,oPlayer);
+        }
+        
+        showBoard();
+        winner = tTtWinner (board);
+    }
+
+}
+////////////////////////////////////////////////////////

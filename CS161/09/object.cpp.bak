@@ -1,0 +1,141 @@
+ personClass.cpp
+/*
+ * CS161
+ * author: James Hourihane
+ * program name: object.cpp
+ * desc: "Create a pointer to a class with 
+ */
+#include <iostream>
+#include <limits>
+#include <cstring>
+
+using namespace std;
+
+const int NAMELEN = 20;     // Max name length
+
+class person
+{
+public:
+    person(); // default constructor
+    person(char* _name, int _age); // constructor with arguments
+    
+    char * get_name(void);
+    int  get_age(void);   
+    void set_name(char* _name);
+    void set_age(int _age);
+    void having_birthday();
+
+private:
+    char name[NAMELEN+1];
+    int age;
+};
+
+person::person()
+{
+    
+}
+
+person::person (char* _name, int _age)
+{
+    cout << "Object is being created." << endl;
+    strcpy(name,_name);
+    age = _age;
+}
+
+void person::having_birthday()
+{
+    age += 1;  // parameter incremented
+}
+
+char *person::get_name ( void )
+{
+    return name;
+}
+
+int person::get_age()
+{
+    return age;
+}
+
+void person::set_name(char* _name)
+{
+    strcpy(name,_name);
+}
+
+void person::set_age(int _age)
+{
+    age = _age;
+}
+    
+int main()
+{    
+    char readname[NAMELEN+1]; // Values read
+    int  age;
+    cout << "Enter the new person's name: ";
+    cin.get (readname, NAMELEN+1);  // Read name
+    cout << "Enter the age of " << readname << ": ";
+    cin >> age;
+        
+    // create a variable to store person object
+    cout << "creating person object variable aPerson with name " << readname << " and age " << age << "..." << endl;
+    person birthday_person(readname,age);   // Celebrating a brithday
+
+    // declare a pointer variable 
+    cout << "declaring a pointer variable person_ptr pointing to aPerson..." << endl;
+    person* person_ptr = &birthday_person;
+
+    // print the pointer variable (should display address)
+    cout << "cout person_ptr = " << person_ptr << endl;
+    
+    // access the person object members through pointer
+    cout << endl << "accessing aPerson members through pointer person_ptr..." << endl;
+    cout << "aPerson.name = " << person_ptr->get_name() << endl;
+    cout << "aPerson.age = " << person_ptr->get_age() << endl;
+    person_ptr->having_birthday();
+    cout << "Happy birthday! " << person_ptr->get_name() << " You are: " << person_ptr->get_age() << endl;
+    
+    // create an array of person objects
+    cout << endl << "declaring an array of person objects as friends[5]..." << endl;
+    person friends[5];
+    
+    // fill in the member values of all objects in the array
+    const char* names[] = {"John Travolta","Bruce Willis", "Julia Roberts","Roger Waters","Madonna"};
+    int ages[] = {50,59,36,75,40};
+    cout << "filling member data values to array objects of friends[5]..." << endl;
+    for(int i=0; i < 5; i++)
+    {
+        friends[i].set_name((char*)names[i]);
+        friends[i].set_age(ages[i]);
+    }
+    
+    // create an array of pointers to person objects
+    cout << endl << "creating array of pointers friends_ptr[5] pointing to objects in friends[5]..." << endl;
+    person* friends_ptr[5];
+    for(int i=0; i < 5; i++)
+    {
+        friends_ptr[i] = &friends[i];
+    }
+    
+    // access members of all objects in array of pointers
+    cout << endl << "accessing members of all objects in pointer array..."<<endl;
+    for(int i=0; i < 5; i++)
+    {
+        cout << "name = " << friends_ptr[i]->get_name() << endl;
+        cout << "age = " << friends_ptr[i]->get_age() << endl;
+        cout << endl;
+    }
+    
+    // access members of all objects in array of pointers
+    cout << endl << "accessing members of all dynamically created objects in pointer array..."<<endl;
+    for(int i=0; i < 5; i++)
+    {
+        cout << "name = " << friends_ptr[i]->get_name() << endl;
+        cout << "age = " << friends_ptr[i]->get_age() << endl;
+        cout << endl;
+    }
+    
+    
+    return(0);
+}
+
+
