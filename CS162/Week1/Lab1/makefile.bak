@@ -1,0 +1,20 @@
+CXX= g++
+CXXFLAGS = -std=c++0x
+LDFLAGS = -lboost_date_time
+
+OBJS = functions.o lecture1.o
+SRCS = functions.cpp lecture1.cpp
+HEADERS = functions.hpp
+
+#target: dependencies
+		 #rule to build
+
+#lecture1: lecture1.cpp functions.hpp functions.cpp
+#		${CXX} ${CXXFLAGS} lecture1.cpp functions.cpp -o lecture1
+
+lecture1: ${SRCS} ${HEADERS}
+		${CXX} ${CXXFLAGS} ${SRCS} -o lecture1
+		
+
+
+
