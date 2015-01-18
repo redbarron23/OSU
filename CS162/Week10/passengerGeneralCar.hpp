@@ -1,0 +1,4 @@
+#ifndef PASSENGERGENERALCAR_H
+#define PASSENGERGENERALCAR_H
+
+#endif
